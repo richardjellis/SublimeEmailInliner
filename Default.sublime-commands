@@ -1,0 +1,5 @@
+[{
+  "id": "email_inliner",
+  "caption": "Email Inliner",
+  "command": "email_inline"
+}]
