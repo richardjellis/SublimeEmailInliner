@@ -1,0 +1,34 @@
+{
+	// Only supporting Premailer's API so far. Intend to add support
+	// for Mailchimp's inliner.
+	"ei_inliner" : "premailer",
+
+	// Settings for premailer
+
+	// Which document handler to use
+	// Options: hpricot, nokogiri
+	"ei_premailer_adapter" : "hpricot",
+
+	// Base URL for converting relative links
+	"ei_premailer_base_url" : "",
+
+	// Query string appended to links
+	"ei_premailer_link_query_string" : "",
+
+	// Whether to preserve any link rel=stylesheet and style elements
+	// Options: true, false
+	"ei_premailer_preserve_styles" : "true",
+
+	// Remove IDs from the HTML document?
+	// Options: true, false
+	"ei_premailer_remove_ids" : "false",
+
+	// Remove classes from the HTML document?
+	// Options: true, false
+	"ei_premailer_remove_classes" : "false",
+
+	// Remove comments from the HTML document?
+	// Options: true, false
+	"ei_premailer_remove_comments" : "false",
+
+}
