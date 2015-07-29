@@ -1,6 +1,5 @@
 import sublime, sublime_plugin, urllib, json
 
-
 class EmailInlineCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		region = sublime.Region(0, self.view.size())
@@ -8,13 +7,13 @@ class EmailInlineCommand(sublime_plugin.TextCommand):
 
 		api_url = 'http://premailer.dialect.ca/api/0.1/documents'
 		values = { 	'html' : content,
-					'adapter' : view.settings().get('ei_premailer_adapter'),
-					'base_url' : view.settings().get('ei_premailer_base_url'),
-					'link_query_string' : view.settings().get('ei_premailer_link_query_string'),
-					'preserve_styles' : view.settings().get('ei_premailer_preserve_styles'),
-					'remove_ids' : view.settings().get('ei_premailer_remove_ids'),
-					'remove_clases' : view.settings().get('ei_premailer_remove_classes'),
-					'remove_comments' : view.settings().get('ei_premailer_remove_comments') }
+					'adapter' : self.view.settings().get('ei_premailer_adapter'),
+					'base_url' : self.view.settings().get('ei_premailer_base_url'),
+					'link_query_string' : self.view.settings().get('ei_premailer_link_query_string'),
+					'preserve_styles' : self.view.settings().get('ei_premailer_preserve_styles'),
+					'remove_ids' : self.view.settings().get('ei_premailer_remove_ids'),
+					'remove_clases' : self.view.settings().get('ei_premailer_remove_classes'),
+					'remove_comments' : self.view.settings().get('ei_premailer_remove_comments') }
 
 		data = urllib.parse.urlencode(values)
 		data = data.encode('utf-8')
